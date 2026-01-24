@@ -65,9 +65,10 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 .section-title::after {
@@ -299,6 +300,30 @@ img {
 .img-container img.active {
     opacity: 1;
     z-index: 1;
+}
+
+.hero-social {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-social .social-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-social .social-btn:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 /* Hero Tech Stack */
@@ -772,6 +797,14 @@ img {
     .projects-grid {
         grid-template-columns: 1fr;
         /* Stack projects on small screens */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 
     .stats-bg-icons i {
