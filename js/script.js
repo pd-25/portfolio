@@ -54,24 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // }
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            navLinks.classList.remove('active'); // Close mobile menu
 
-            // Reset mobile menu icon
-            if (menuToggle) {
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 
     // Hero Image Slideshow
     const heroImages = document.querySelectorAll('.img-container img');

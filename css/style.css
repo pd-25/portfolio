@@ -22,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -594,12 +595,18 @@ img {
     position: relative;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover .project-icon {
+    transform: translate(2px, -2px);
+    color: var(--accent);
 }
 
 .project-content {
@@ -610,6 +617,15 @@ img {
     font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-icon {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    transition: var(--transition);
 }
 
 .project-desc {
@@ -693,25 +709,61 @@ img {
     }
 
     .hero-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+
+    .hero-text,
+    .hero-image {
+        display: contents;
+    }
+
+    /* Mobile Reordering */
+    .img-container {
+        order: 1;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-social {
+        order: 2;
+        justify-content: center;
+        margin-bottom: 2rem;
     }
 
     .hero-header-line {
+        order: 3;
         flex-wrap: wrap;
         white-space: normal;
-        /* Reset for mobile wrapping */
         justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-description {
+        order: 4;
+    }
+
+    .hero-quote {
+        order: 5;
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero-mini-bio {
+        order: 6;
+    }
+
+    .cta-buttons {
+        order: 7;
+        justify-content: center;
+        display: flex;
+        margin-bottom: 3rem;
     }
 
     .hero-text {
         width: 100%;
         max-width: 100%;
-    }
-
-    .hero-quote {
-        margin: 0 auto 2rem auto;
     }
 
     .hero-title {
@@ -720,12 +772,6 @@ img {
 
     .about-content {
         flex-direction: column;
-    }
-
-    .img-container {
-        width: 280px;
-        height: 280px;
-        margin: 0 auto;
     }
 }
 
